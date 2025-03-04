@@ -24,6 +24,11 @@ export class OrderTableComponent implements OnInit {
   ngOnInit() {
     this.loadOrders();
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
+  }
+  
 
   loadOrders() {
     this.orderService.getOrders().subscribe(
