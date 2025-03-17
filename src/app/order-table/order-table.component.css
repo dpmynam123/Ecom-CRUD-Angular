@@ -1,24 +1,128 @@
+/* 🌟 Table Container */
 .table-container {
-  width: 95%;
-  margin: 20px auto;
-  background: rgb(111, 187, 208);
-  padding: 20px;
-  border-radius: 12px;  /* ✅ Adds rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;  /* ✅ Ensures content respects border-radius */
-}
-/* 🌟 Search Box */
-.search-box {
-  width: 40%;
-  padding: 10px;
-  background: rgb(241, 240, 238);
-  margin: 15px 0;
-  font-size: 16px;
-  border: 2px solid #1c9d90;
-  border-radius: 8px;
-  outline: none;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 4px 10px rgba(216, 9, 9, 0.1);
+  max-width: 90%;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-in-out;
+  overflow: hidden; /* Ensures corners are rounded */
 }
 
-  
+/* 🌟 Table Styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden; /* Ensures the border-radius applies properly */
+}
+
+/* 🌟 Table Headers */
+th {
+  background-color: #0D47A1; /* Deep blue header */
+  color: #010b12; /* Soft blue text */
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+th:first-child {
+  border-top-left-radius: 16px;
+}
+
+th:last-child {
+  border-top-right-radius: 16px;
+}
+
+th:hover {
+  background-color: #1565C0; /* Darker blue on hover */
+  color: #BBDEFB; /* Light blue for better visibility */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+}
+
+/* 🌟 Sort Arrow */
+.mat-sort-header-arrow {
+  opacity: 1 !important;
+  color: #BBDEFB;
+  transition: transform 0.3s ease;
+}
+
+th:hover .mat-sort-header-arrow {
+  transform: scale(1.2); /* Enlarged sort arrow on hover */
+}
+
+/* 🌟 Table Rows */
+.order-row {
+  background-color: #E3F2FD;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-row:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+/* 🌟 Rounded Corners for Table Rows */
+tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+
+/* 🌟 Search Box */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  background-color: #F0F4F8;
+  border: 2px solid #1E88E5;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(30, 136, 229, 0.15);
+}
+
+.search-box::placeholder {
+  color: #5C6BC0;
+  font-weight: 500;
+}
+
+.search-box:focus {
+  background-color: #FFFFFF;
+  border-color: #0D47A1;
+  box-shadow: 0 6px 18px rgba(13, 71, 161, 0.25);
+  transform: scale(1.03);
+}
+
+/* 🌟 Pagination */
+.mat-paginator {
+  background-color: #0D47A1;
+  color: #ffffff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* 🌟 Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
